@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Curso;
 use Illuminate\Http\Request;
 
 class CursoController extends Controller
@@ -27,7 +27,17 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->validate([
+            'nome' => ['required','string','max:255'],
+            'descricao' => ['required','string'],
+        ]); #validade serve para validar os campos que estão vindo do formulario
+
+        Curso::create($dados);
+        #Curso = MODEL
+        return redirect()
+        ->route('cursos.index')
+        ->with('success','Curso Criado com sucesso');
+
     }
 
     /**
