@@ -9,6 +9,7 @@ class Curso extends Model
     //
     protected $fillable = [
         'nome',
+        'semestres',
         'descricao',
     ];
 }

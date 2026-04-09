@@ -10,6 +10,18 @@
     required
 >
 
+<label for="semestres">Semestres</label>
+<input
+    type="number"
+    id="semestres"
+    name="semestres"
+    min="1"
+    max="20"
+    value="{{ old('semestres', $curso->semestres ?? '') }}"
+    required
+>
+
+
 <label for="descricao">Descricao</label>
 <textarea
     id="descricao"

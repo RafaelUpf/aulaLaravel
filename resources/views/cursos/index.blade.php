@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('title', 'Cursos')
 
@@ -16,6 +16,7 @@
             <thead>
                 <tr>
                     <th>Nome</th>
+                    <th>semestres</th>                  
                     <th>Descricao</th>
                     <th>Criado em</th>
                     <th>Acoes</th>
@@ -25,6 +26,7 @@
                 @foreach ($cursos as $curso)
                     <tr>
                         <td>{{ $curso->nome }}</td>
+                        <td>{{ $curso->semestres }}</td>
                         <td>{{ $curso->descricao }}</td>
                         <td>{{ $curso->created_at->format('d/m/Y H:i') }}</td>
                         <td>

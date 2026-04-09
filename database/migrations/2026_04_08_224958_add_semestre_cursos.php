@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cursos', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome');
-            $table->string('semestres');
-            $table->text('descricao');
-            $table->timestamps();
+        // 
+        Schema::table('cursos', function(Blueprint $table){
+            $table->unsignedTinyInteger('semestres')->default(1)->after('descricao');
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cursos');
+        //
     }
+
+
 };
